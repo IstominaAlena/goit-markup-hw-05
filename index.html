@@ -64,7 +64,9 @@
       <!--Hero-->
       <section class="hero overlay">
         <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-        <button class="button hero" type="button">Заказать услугу</button>
+        <button class="button hero" type="button" data-modal-open>
+          Заказать услугу
+        </button>
       </section>
 
       <!--Our benefits-->
@@ -461,5 +463,25 @@
         </div>
       </div>
     </footer>
+
+    <!-- Hero modal -->
+    <div class="hero-backdrop is-hidden" data-modal>
+      <div class="hero-modal">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto iure
+          veritatis fuga dolorum. Quisquam, aperiam alias in ex voluptatum vitae
+          nostrum culpa perferendis veritatis cumque soluta, laborum odio
+          deserunt dicta.
+        </p>
+        <button class="modal-button" type="button" data-modal-close>
+          <svg class="modal-icon" width="18" height="18">
+            <use href="./images/svg/symbol-defs.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- JavaScript for modal -->
+    <script src="./js/modal.js"></script>
   </body>
 </html>

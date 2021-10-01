@@ -567,6 +567,55 @@ p {
 
 /* ===== End Footer ===== */
 
+/* ===== Hero modal===== */
+
+.hero-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hero-backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  padding: 40px;
+
+  background-color: var(--primary-background-color);
+}
+
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background-color: var(--primary-background-color);
+}
+
+/* ===== End Hero modal===== */
+
 /* ===== PORTFOLIO PAGE ============================================= */
 
 /* ===== Filter ===== */
