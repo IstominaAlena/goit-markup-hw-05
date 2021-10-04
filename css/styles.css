@@ -150,13 +150,14 @@ p {
   padding-top: 32px;
   padding-bottom: 32px;
 
-  color: var(--title-text-color);
-
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
 
+  color: var(--title-text-color);
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
@@ -200,14 +201,14 @@ p {
   justify-content: center;
   align-items: center;
 
-  color: var(--main-text-color);
-
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 
+  color: var(--main-text-color);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover,
@@ -439,6 +440,8 @@ p {
   border-radius: 50% 50%;
   justify-content: center;
   align-items: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -448,6 +451,8 @@ p {
 
 .social-icon {
   fill: var(--svg-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover .social-icon,
@@ -479,6 +484,8 @@ p {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -488,6 +495,8 @@ p {
 
 .client-icon {
   fill: var(--svg-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover .client-icon,
@@ -577,12 +586,16 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 1;
 
   background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-backdrop.is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -590,16 +603,22 @@ p {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
 
   min-width: 528px;
   min-height: 581px;
   padding: 40px;
 
   background-color: var(--primary-background-color);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button {
+.hero-backdrop.is-hidden .hero-modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.hero-modal-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -610,10 +629,12 @@ p {
 
   width: 30px;
   height: 30px;
+  padding: 0;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 
-  background-color: var(--primary-background-color);
+  background-color: transparent;
 }
 
 /* ===== End Hero modal===== */
@@ -632,16 +653,19 @@ p {
 }
 
 .filter-button {
-  color: var(--title-text-color);
-  background-color: var(--secondary-background-color);
-
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: inherit;
-
   text-align: center;
+
+  color: var(--title-text-color);
+  background-color: var(--secondary-background-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover,
@@ -677,6 +701,7 @@ p {
 .card-link {
   display: block;
   text-decoration: none;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-title {
@@ -722,16 +747,9 @@ p {
   overflow: hidden;
 }
 
-.card-link:hover .gallery-text {
-  transform: translatey(0);
-}
-
 .gallery-text {
   position: absolute;
-  transform: translatey(100%);
-  transition: transform 250ms ease;
-  left: 0;
-  bottom: -1px;
+  transform: translateY(100%);
 
   width: 100%;
   height: 100%;
@@ -742,6 +760,10 @@ p {
 
   color: var(--secondary-text-color);
   background-color: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.card-link:hover .gallery-text {
+  transform: translateY(-100%);
+}
 /* ===== End Gallery ===== */
